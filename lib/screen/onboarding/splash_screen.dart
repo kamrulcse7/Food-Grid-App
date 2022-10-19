@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:food_grid/const.dart';
+import 'package:page_transition/page_transition.dart';
 
 import 'first_onboarding_screen.dart';
 
@@ -12,8 +14,12 @@ class SplashScreen extends StatelessWidget {
     Timer(Duration(milliseconds: 2200), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (context) => FirstOnboardingScreen(),
+        PageTransition(
+          child: FirstOnboardingScreen(),
+          type: PageTransitionType.rightToLeft,
+          duration: Duration(milliseconds: 600),
+          reverseDuration: Duration(milliseconds: 600),
+          isIos: true,
         ),
       );
     });
@@ -24,11 +30,11 @@ class SplashScreen extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/icon/splashbg.png"),
+            image: AssetImage("assets/images/bg_img.png"),
             fit: BoxFit.cover,
           ),
         ),
-        child: Image.asset("assets/icon/logo.png"),
+        child: appLogo(),
       ),
     );
   }

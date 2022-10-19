@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_grid/screen/login_screen.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../const.dart';
 import '../../widget/custom_button.dart';
@@ -53,8 +55,16 @@ class SecondOnboardingScreen extends StatelessWidget {
             ),
             CustomButton(
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => SecondOnboardingScreen()));
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    child: LogInScreen(),
+                    type: PageTransitionType.rightToLeft,
+                    duration: Duration(milliseconds: 600),
+                    reverseDuration: Duration(milliseconds: 600),
+                    isIos: true,
+                  ),
+                );
               },
               title: "Next",
               height: 51.0,
