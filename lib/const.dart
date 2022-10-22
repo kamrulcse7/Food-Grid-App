@@ -27,7 +27,7 @@ appLogo() {
   return Container(
     width: 152.0,
     height: 175.0,
-    child: Image.asset("assets/icon/logo.png"),
+    child: Image.asset("assets/icon/app_logo.png"),
   );
 }
 
