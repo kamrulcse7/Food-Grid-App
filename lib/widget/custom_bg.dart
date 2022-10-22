@@ -16,7 +16,7 @@ class CustomBg extends StatelessWidget {
             top: 0,
             left: 0,
             right: 0,
-            child: Image.asset("assets/images/bg_pattern.png"),
+            child: Image.asset("assets/images/bg_pattern2.png"),
           ),
           child,
         ],
