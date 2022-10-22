@@ -185,13 +185,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        PageTransition(
-                          child: SigunupProcessScreen(),
-                          type: PageTransitionType.rightToLeft,
-                          duration: Duration(milliseconds: 600),
-                          reverseDuration: Duration(milliseconds: 600),
-                          isIos: true,
-                        ),
+                        nextPage(SigunupProcessScreen()),
                       );
                     },
                     title: "create account",
@@ -223,4 +217,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
     );
   }
+
+
 }

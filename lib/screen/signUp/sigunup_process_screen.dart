@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:food_grid/const.dart';
 import 'package:food_grid/screen/payment_method_screen.dart';
@@ -103,9 +101,7 @@ class SigunupProcessScreen extends StatelessWidget {
                   child: CustomButton(
                     onTap: () {
                       Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => PaymentMethodScreen(),
-                        ),
+                        nextPage(PaymentMethodScreen()),
                       );
                     },
                     height: 51.0,

@@ -57,13 +57,7 @@ class FirstOnboardingScreen extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  PageTransition(
-                    child: SecondOnboardingScreen(),
-                    type: PageTransitionType.rightToLeft,
-                    duration: Duration(milliseconds: 600),
-                    reverseDuration: Duration(milliseconds: 600),
-                    isIos: true,
-                  ),
+                  nextPage(SecondOnboardingScreen()),
                 );
               },
               title: "Next",

@@ -125,13 +125,7 @@ class LogInScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        PageTransition(
-                          child: SignUpScreen(),
-                          type: PageTransitionType.rightToLeft,
-                          duration: Duration(milliseconds: 600),
-                          reverseDuration: Duration(milliseconds: 600),
-                          isIos: true,
-                        ),
+                        nextPage(SignUpScreen()),
                       );
                     },
                     title: "Login",

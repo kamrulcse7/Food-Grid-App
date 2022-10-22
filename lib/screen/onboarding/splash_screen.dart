@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:food_grid/const.dart';
-import 'package:page_transition/page_transition.dart';
 
 import 'first_onboarding_screen.dart';
 
@@ -14,13 +13,7 @@ class SplashScreen extends StatelessWidget {
     Timer(Duration(milliseconds: 2200), () {
       Navigator.pushReplacement(
         context,
-        PageTransition(
-          child: FirstOnboardingScreen(),
-          type: PageTransitionType.rightToLeft,
-          duration: Duration(milliseconds: 600),
-          reverseDuration: Duration(milliseconds: 600),
-          isIos: true,
-        ),
+        nextPage(FirstOnboardingScreen()),
       );
     });
     return Scaffold(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 const kPrimaryColor = Colors.amber;
 
@@ -29,3 +30,13 @@ appLogo() {
     child: Image.asset("assets/icon/logo.png"),
   );
 }
+
+  PageTransition<dynamic> nextPage(page) {
+    return PageTransition(
+      child: page,
+      type: PageTransitionType.rightToLeft,
+      duration: Duration(milliseconds: 600),
+      reverseDuration: Duration(milliseconds: 600),
+      isIos: true,
+    );
+  }

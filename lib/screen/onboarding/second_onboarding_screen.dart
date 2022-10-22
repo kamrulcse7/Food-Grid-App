@@ -55,15 +55,8 @@ class SecondOnboardingScreen extends StatelessWidget {
             ),
             CustomButton(
               onTap: () {
-                Navigator.push(
-                  context,
-                  PageTransition(
-                    child: LogInScreen(),
-                    type: PageTransitionType.rightToLeft,
-                    duration: Duration(milliseconds: 600),
-                    reverseDuration: Duration(milliseconds: 600),
-                    isIos: true,
-                  ),
+                Navigator.of(context).pushReplacement(
+                  nextPage(LogInScreen())
                 );
               },
               title: "Next",
