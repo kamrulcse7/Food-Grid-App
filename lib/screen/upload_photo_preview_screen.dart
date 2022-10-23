@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:food_grid/screen/upload_photo_preview_screen.dart';
 import 'package:food_grid/widget/custom_bg.dart';
 
 import '../const.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_leading_button.dart';
 
-class UploadPhotoScreen extends StatelessWidget {
-  const UploadPhotoScreen({super.key});
+class UploadPhotoPreviewScreen extends StatelessWidget {
+  const UploadPhotoPreviewScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,21 +60,16 @@ class UploadPhotoScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  child: Column(
-                    children: [
-                      imgChoiceBtn(
-                        onTap: (){},
-                        img: "gallery_logo.png",
-                        title: "From Gallery",
-                      ),
-                      SizedBox(height: 20.0,),
-                      imgChoiceBtn(
-                        onTap: (){},
-                        img: "take_photo_logo.png",
-                        title: "Take photo",
-                      ),
-                    ],
+                
+                Align(
+                  alignment: Alignment.center,
+                  child: Container(
+                    height: 242.0,
+                    width: 236.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.0),
+                      color: Color(0xFF252525),
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -87,9 +79,9 @@ class UploadPhotoScreen extends StatelessWidget {
                   alignment: Alignment.center,
                   child: CustomButton(
                     onTap: () {
-                      Navigator.of(context).push(
-                        nextPage(UploadPhotoPreviewScreen()),
-                      );
+                      // Navigator.of(context).push(
+                      //   nextPage(UploadPhotoScreen()),
+                      // );
                     },
                     height: 51.0,
                     width: 157.0,
@@ -99,35 +91,6 @@ class UploadPhotoScreen extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  imgChoiceBtn({String? img, String? title, required VoidCallback onTap}) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: 138.0,
-        width: double.infinity,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: Color(0xFF252525),
-          borderRadius: BorderRadius.circular(12.0),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset("assets/icon/$img"),
-            SizedBox(
-              height: 9.0,
-            ),
-            Text(
-              "${title ?? '' }",
-              style: myTextStyle(
-                  clr: Colors.white, fw: FontWeight.w600, size: 14.0),
-            )
-          ],
         ),
       ),
     );
