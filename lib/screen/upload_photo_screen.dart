@@ -1,15 +1,35 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:food_grid/screen/upload_photo_preview_screen.dart';
+import 'package:food_grid/screen/set_loction_screen.dart';
 import 'package:food_grid/widget/custom_bg.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../const.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_leading_button.dart';
 
-class UploadPhotoScreen extends StatelessWidget {
+class UploadPhotoScreen extends StatefulWidget {
   const UploadPhotoScreen({super.key});
+
+  @override
+  State<UploadPhotoScreen> createState() => _UploadPhotoScreenState();
+}
+
+class _UploadPhotoScreenState extends State<UploadPhotoScreen> {
+  XFile? _image;
+
+  chooseImageFromGC() async {
+    ImagePicker _picker = ImagePicker();
+    _image = await _picker.pickImage(source: ImageSource.gallery);
+    setState(() {});
+  }
+
+  chooseImageFromCamera() async {
+    ImagePicker _picker = ImagePicker();
+    _image = await _picker.pickImage(source: ImageSource.camera);
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,23 +83,59 @@ class UploadPhotoScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  child: Column(
-                    children: [
-                      imgChoiceBtn(
-                        onTap: (){},
-                        img: "gallery_logo.png",
-                        title: "From Gallery",
+                _image == null
+                    ? Container(
+                        child: Column(
+                          children: [
+                            imgChoiceBtn(
+                              onTap: () {
+                                chooseImageFromGC();
+                              },
+                              img: "gallery_logo.png",
+                              title: "From Gallery",
+                            ),
+                            SizedBox(
+                              height: 20.0,
+                            ),
+                            imgChoiceBtn(
+                              onTap: () {
+                                chooseImageFromCamera();
+                              },
+                              img: "take_photo_logo.png",
+                              title: "Take photo",
+                            ),
+                          ],
+                        ),
+                      )
+                    : Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                          height: 242.0,
+                          width: 236.0,
+                          alignment: Alignment.topRight,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12.0),
+                            color: Color(0xFF252525),
+                            image: DecorationImage(
+                              image: FileImage(
+                                File(_image!.path),
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _image = null;
+                                });
+                              },
+                              icon: Icon(
+                                Icons.close,
+                                size: 30.0,
+                                color: Colors.red,
+                              )),
+                        ),
                       ),
-                      SizedBox(height: 20.0,),
-                      imgChoiceBtn(
-                        onTap: (){},
-                        img: "take_photo_logo.png",
-                        title: "Take photo",
-                      ),
-                    ],
-                  ),
-                ),
                 SizedBox(
                   height: 60.0,
                 ),
@@ -88,7 +144,7 @@ class UploadPhotoScreen extends StatelessWidget {
                   child: CustomButton(
                     onTap: () {
                       Navigator.of(context).push(
-                        nextPage(UploadPhotoPreviewScreen()),
+                        nextPage(SetLocationScreen()),
                       );
                     },
                     height: 51.0,
@@ -123,7 +179,7 @@ class UploadPhotoScreen extends StatelessWidget {
               height: 9.0,
             ),
             Text(
-              "${title ?? '' }",
+              "${title ?? ''}",
               style: myTextStyle(
                   clr: Colors.white, fw: FontWeight.w600, size: 14.0),
             )

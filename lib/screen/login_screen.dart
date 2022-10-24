@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid/screen/signUp/sign_up_screen.dart';
-import 'package:food_grid/widget/custom_bg.dart';
-import 'package:food_grid/widget/custom_icon_text_field.dart';
-import 'package:get/get.dart';
-import 'package:page_transition/page_transition.dart';
 
 import '../const.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
-import 'onboarding/second_onboarding_screen.dart';
 
 class LogInScreen extends StatelessWidget {
   LogInScreen({super.key});

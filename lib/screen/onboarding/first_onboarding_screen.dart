@@ -55,7 +55,7 @@ class FirstOnboardingScreen extends StatelessWidget {
             ),
             CustomButton(
               onTap: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   nextPage(SecondOnboardingScreen()),
                 );
