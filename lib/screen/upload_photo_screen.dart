@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:food_grid/screen/set_loction_screen.dart';
 import 'package:food_grid/widget/custom_bg.dart';
 import 'package:image_picker/image_picker.dart';
@@ -91,7 +92,7 @@ class _UploadPhotoScreenState extends State<UploadPhotoScreen> {
                               onTap: () {
                                 chooseImageFromGC();
                               },
-                              img: "gallery_logo.png",
+                              img: "gallery.svg",
                               title: "From Gallery",
                             ),
                             SizedBox(
@@ -101,7 +102,7 @@ class _UploadPhotoScreenState extends State<UploadPhotoScreen> {
                               onTap: () {
                                 chooseImageFromCamera();
                               },
-                              img: "take_photo_logo.png",
+                              img: "camera.svg",
                               title: "Take photo",
                             ),
                           ],
@@ -174,7 +175,8 @@ class _UploadPhotoScreenState extends State<UploadPhotoScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/icon/$img"),
+            // Image.asset("assets/icon/$img"),
+            SvgPicture.asset("assets/icon/$img"),
             SizedBox(
               height: 9.0,
             ),

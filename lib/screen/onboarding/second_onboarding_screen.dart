@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_grid/screen/login_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -55,9 +56,7 @@ class SecondOnboardingScreen extends StatelessWidget {
             ),
             CustomButton(
               onTap: () {
-                Navigator.of(context).pushReplacement(
-                  nextPage(LogInScreen())
-                );
+                Navigator.of(context).pushReplacement(nextPage(LogInScreen()));
               },
               title: "Next",
               height: 51.0,

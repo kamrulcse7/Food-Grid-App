@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_grid/const.dart';
 import 'package:food_grid/screen/onboarding/second_onboarding_screen.dart';
 import 'package:page_transition/page_transition.dart';

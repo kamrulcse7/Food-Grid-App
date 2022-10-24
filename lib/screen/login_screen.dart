@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:food_grid/screen/signUp/sign_up_screen.dart';
 
 import '../const.dart';
@@ -20,7 +21,12 @@ class LogInScreen extends StatelessWidget {
             top: 0,
             left: 0,
             right: 0,
-            child: Image.asset("assets/images/bg_pattern.png"),
+            // child: Image.asset("assets/images/bg_pattern.png"),
+            child: SvgPicture.asset(
+              "assets/images/bg_pattern.svg",
+              fit: BoxFit.cover,
+              color: Color(0xFF7D6D07).withOpacity(0.7),
+            ),
           ),
           Container(
             height: double.infinity,
@@ -87,7 +93,7 @@ class LogInScreen extends StatelessWidget {
                             children: [
                               socialSignInButton(
                                 onTap: () {},
-                                img: "assets/icon/facebook.png",
+                                img: "assets/icon/facebook.svg",
                                 text: "Facebook",
                               ),
                               SizedBox(
@@ -95,7 +101,7 @@ class LogInScreen extends StatelessWidget {
                               ),
                               socialSignInButton(
                                 onTap: () {},
-                                img: "assets/icon/google_logo.png",
+                                img: "assets/icon/google.svg",
                                 text: "Google",
                               ),
                             ],
@@ -151,7 +157,8 @@ class LogInScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.0)),
           child: Row(
             children: [
-              Image.asset("${img}"),
+              // Image.asset("${img}"),
+              SvgPicture.asset("${img}"),
               SizedBox(
                 width: 12.0,
               ),

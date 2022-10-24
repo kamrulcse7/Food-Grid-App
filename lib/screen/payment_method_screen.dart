@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:food_grid/screen/upload_photo_screen.dart';
 import 'package:food_grid/widget/custom_bg.dart';
 
@@ -65,21 +66,21 @@ class PaymentMethodScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       payMethodBtn(
-                        img: "paypal_logo.png",
+                        img: "paypal.svg",
                         onTap: () {},
                       ),
                       SizedBox(
                         height: 20.0,
                       ),
                       payMethodBtn(
-                        img: "visa_logo.png",
+                        img: "visa.svg",
                         onTap: () {},
                       ),
                       SizedBox(
                         height: 20.0,
                       ),
                       payMethodBtn(
-                        img: "payoneer_logo.png",
+                        img: "payoneer.svg",
                         onTap: () {},
                       ),
                     ],
@@ -120,7 +121,8 @@ class PaymentMethodScreen extends StatelessWidget {
           color: Color(0xFF252525),
           borderRadius: BorderRadius.circular(8.0),
         ),
-        child: Image.asset("assets/icon/$img"),
+        // child: Image.asset("assets/icon/$img"),
+        child: SvgPicture.asset("assets/icon/$img"),
       ),
     );
   }

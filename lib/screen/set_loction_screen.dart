@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'package:food_grid/widget/custom_bg.dart';
 import 'package:food_grid/widget/custom_button.dart';
@@ -65,7 +66,8 @@ class SetLocationScreen extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Image.asset('assets/icon/location.png'),
+                        // Image.asset('assets/icon/location.png'),
+                        SvgPicture.asset("assets/icon/location.svg"),
                         SizedBox(
                           width: 16.0,
                         ),

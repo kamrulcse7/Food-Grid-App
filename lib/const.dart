@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -25,9 +26,9 @@ myTextStyle(
 
 appLogo() {
   return Container(
-    width: 152.0,
+    width: 192.0,
     height: 175.0,
-    child: Image.asset("assets/icon/app_logo.png"),
+    child: SvgPicture.asset("assets/icon/app_logo.svg"),
   );
 }
 

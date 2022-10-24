@@ -9,10 +9,12 @@ class CustomTextField extends StatelessWidget {
     this.hintText,
     required this.controller,
     required this.obscureText,
+    this.keyboardType,
   }) : super(key: key);
   final String? hintText;
   final TextEditingController controller;
   final bool obscureText;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,7 @@ class CustomTextField extends StatelessWidget {
       obscuringCharacter: '*',
       obscureText: obscureText,
       autofocus: false,
+      keyboardType: keyboardType,
       style: TextStyle(
           fontSize: 16.0,
           color: Color(0xFFfefefe),
@@ -33,6 +36,7 @@ class CustomTextField extends StatelessWidget {
         //   gapPadding: 5.0,
         //   borderSide: BorderSide(width: 1.0),
         // ),
+        
         border: InputBorder.none,
         hintText: hintText,
         hintStyle: myTextStyle(

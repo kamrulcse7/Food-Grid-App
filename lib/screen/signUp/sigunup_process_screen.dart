@@ -73,22 +73,25 @@ class SigunupProcessScreen extends StatelessWidget {
                         controller: _fNameController,
                         obscureText: false,
                         hintText: "First Name",
+                        keyboardType: TextInputType.name,
                       ),
                       SizedBox(
                         height: 12.0,
                       ),
                       CustomTextField(
-                        controller: _fNameController,
+                        controller: _lNameController,
                         obscureText: false,
                         hintText: "Last Name",
+                        keyboardType: TextInputType.name,
                       ),
                       SizedBox(
                         height: 12.0,
                       ),
                       CustomTextField(
-                        controller: _fNameController,
+                        controller: _phoneController,
                         obscureText: false,
                         hintText: "Mobile Number",
+                        keyboardType: TextInputType.phone,
                       ),
                     ],
                   ),

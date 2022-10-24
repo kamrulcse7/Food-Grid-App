@@ -7,7 +7,6 @@ import 'package:page_transition/page_transition.dart';
 
 import '../../const.dart';
 import '../../widget/custom_button.dart';
-import '../../widget/custom_text_field.dart';
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({super.key});
