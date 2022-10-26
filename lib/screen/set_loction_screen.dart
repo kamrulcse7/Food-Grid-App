@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:food_grid/screen/verification_code_screen.dart';
 
 import 'package:food_grid/widget/custom_bg.dart';
 import 'package:food_grid/widget/custom_button.dart';
@@ -112,7 +113,7 @@ class SetLocationScreen extends StatelessWidget {
                 child: CustomButton(
                   onTap: () {
                     Navigator.of(context).push(
-                      nextPage(ReadyProfileScreen()),
+                      nextPage(VerificationCodeScreen()),
                     );
                   },
                   height: 51.0,
