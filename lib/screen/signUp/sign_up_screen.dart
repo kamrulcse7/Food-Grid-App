@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:food_grid/screen/login_screen.dart';
 import 'package:food_grid/screen/signUp/sigunup_process_screen.dart';
 import 'package:food_grid/widget/custom_bg.dart';
@@ -35,7 +36,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
             top: 0,
             left: 0,
             right: 0,
-            child: Image.asset("assets/images/bg_pattern.png"),
+            child: SvgPicture.asset(
+              "assets/images/bg_pattern.svg",
+              fit: BoxFit.cover,
+              color: Color(0xFF7D6D07).withOpacity(0.5),
+            ),
           ),
           Container(
             height: double.infinity,

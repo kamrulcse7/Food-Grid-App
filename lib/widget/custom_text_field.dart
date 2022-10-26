@@ -10,11 +10,13 @@ class CustomTextField extends StatelessWidget {
     required this.controller,
     required this.obscureText,
     this.keyboardType,
+    this.suffixIcon,
   }) : super(key: key);
   final String? hintText;
   final TextEditingController controller;
   final bool obscureText;
   final TextInputType? keyboardType;
+  final Widget? suffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,7 @@ class CustomTextField extends StatelessWidget {
       obscureText: obscureText,
       autofocus: false,
       keyboardType: keyboardType,
+      
       style: TextStyle(
           fontSize: 16.0,
           color: Color(0xFFfefefe),
@@ -31,6 +34,7 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         fillColor: Color(0xFF252525),
         filled: true,
+        suffixIcon: suffixIcon,
         // border: OutlineInputBorder(
         //   borderRadius: BorderRadius.circular(10.0),
         //   gapPadding: 5.0,

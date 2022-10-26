@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:food_grid/screen/forgotPassword/via_method_screen.dart';
 import 'package:food_grid/screen/signUp/sign_up_screen.dart';
 
 import '../const.dart';
@@ -25,7 +26,7 @@ class LogInScreen extends StatelessWidget {
             child: SvgPicture.asset(
               "assets/images/bg_pattern.svg",
               fit: BoxFit.cover,
-              color: Color(0xFF7D6D07).withOpacity(0.7),
+              color: Color(0xFF7D6D07).withOpacity(0.5),
             ),
           ),
           Container(
@@ -108,7 +109,12 @@ class LogInScreen extends StatelessWidget {
                           ),
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              nextPage(ViaMethodScreen()),
+                            );
+                          },
                           child: Text(
                             "Forgot your password?",
                             style: myTextStyle(

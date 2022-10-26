@@ -52,7 +52,7 @@ class ReadyProfileScreen extends StatelessWidget {
               },
               height: 51.0,
               width: 157.0,
-              title: "Next",
+              title: "Try Order",
             ),
           ],
         ),
